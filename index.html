@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h1 class="title">Password Generator</h1>
+    <input type="text" name="Password" id="password" class="password-field" disabled>
+    <div class="pasw-length">
+    </div>
+    <div class="rangeslider">
+      <input type="range" min="1" max="128" value="10"
+                  class="myslider" id="sliderRange">
+  <p class="length-text">Length: <span id="value"></span></p>
+    </div>
+    <div class="parameters-btns">
+      <button class="param-btn param-btn-enabled" id="bigLetters" data-is-enabled="true">A-Z</button>
+      <button class="param-btn param-btn-enabled" id="smallLetters" data-is-enabled="true">a-z</button>
+      <button class="param-btn param-btn-enabled" id="numbers" data-is-enabled="true">0-9</button>
+      <button class="param-btn" id="specialsChars" data-is-enabled="false">/*+&@^~</button>
+    </div>
+    <div class="password-btns">
+      <button type="submit" class="submit" id="generate">Generate</button>
+      <div class="tooltip">
+        <button class="copy" id="copy" onmouseout="outFunc()"">
+          <span class=" tooltiptext" id="tooltip">
+          Copy to clipboard
+          </span>
+          Copy
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="app.js"></script>
+</body>
+
+</html>

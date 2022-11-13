@@ -1,0 +1,137 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  padding: 10px;
+  margin: 10px; 
+  font-family: 'Roboto', sans-serif;
+  background-color: bisque;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
+  font-size: 18px;
+  margin: 16px 0;
+}
+
+.title {
+  padding: 10px;
+}
+
+.password-field {
+  min-width: 400px;
+  margin: 10px;
+  padding: 15px;
+  outline: none;
+  font-size: 25px;
+  margin: 25px;
+}
+
+.submit, .copy {
+  padding: 9px 25px;
+  margin: 25px 5px;
+  font-size: 25px;
+  background-color: gray;
+  color: white;
+  cursor: pointer;
+}
+
+
+.parameters-btns {
+  background-color: rgba(0.5, 0.5, 0.5, 0.5);
+  padding: 0px 25px;
+  cursor: pointer;
+}
+
+.param-btn {
+  font-size: 25px;
+  margin: 15px 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.param-btn-enabled {
+  background-color: orange;
+  border: goldenrod 2px solid;
+  cursor: pointer;
+}
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 240px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 95%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.rangeslider{
+  width: 100%;
+  margin: 20px 0px;
+}
+
+.myslider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #fffcf1;
+  width: 80%;
+  height: 20px;
+  opacity: 2;
+ }
+
+
+.myslider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  background: orange;
+  border: black 1px solid;
+  width: 5%;
+  height: 20px;
+}
+
+.myslider:hover {
+  opacity: 1;
+}
+
+.length-text {
+  margin: 8px;
+  font-weight: lighter;
+  font-size: x-large;
+}
