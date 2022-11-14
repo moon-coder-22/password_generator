@@ -7,10 +7,10 @@ const params = {
 
 let paswLength;
 
-var rangeslider = document.getElementById("sliderRange");
+var rangeSlider = document.getElementById("sliderRange");
 var output = document.getElementById("value");
-output.innerHTML = rangeslider.value;
-paswLength = rangeslider.value;
+output.innerHTML = rangeSlider.value;
+paswLength = rangeSlider.value;
 
 const input = document.getElementById("password");
 const generateBtn = document.getElementById("generate");
@@ -24,20 +24,23 @@ generateBtn.addEventListener("click", () => {
 });
 
 copyBtn.addEventListener("click", copyToClipboard);
-let paramBtns = document.querySelectorAll(".param-btn");
 
+// add event listeners to each parameter button 
+let paramBtns = document.querySelectorAll(".param-btn");
 paramBtns.forEach((btn) =>
   btn.addEventListener("click", (e) => {
     switchBtn(e.target);
   })
 );
 
-rangeslider.oninput = function() {
+rangeSlider.oninput = function() {
   output.innerHTML = this.value;
   paswLength = this.value;
   generatePassword(params);
 }
 
+// switching visual of button 
+// and toggle status of button
 function switchBtn(btn) {
   let btnIsEnabled = btn.getAttribute("data-is-enabled");
   let btnId = btn.id;
@@ -87,7 +90,7 @@ function generatePassword(params) {
     "Y",
     "Z",
   ];
-  const smallLetters = bigLetters.map((e) => e.toLocaleLowerCase());
+  const smallLetters = bigLetters.map((e) => e.toLowerCase());
   const specialsChars = "_!#%*()/*-=+&@\^".split('');
 
   let charSet = {
@@ -106,13 +109,14 @@ function generatePassword(params) {
     }
   });
 
-  // generate password
+  // generate password in loop
   for (let i = 0; i < paswLength; i++) {
-
     let char = randomizeAll(allSymbols)[randomFromZeroToMax(allSymbols.length - 1)];
     password += char;
   }
 
+  // if password exist - render it
+  // else leave previouse password
   if(allSymbols.length !== 0) {
    renderResult(password);
   }
@@ -128,7 +132,7 @@ async function copyToClipboard() {
   }
 }
 
-function outFunc() {
+function showCopyMessage() {
   let tooltip = document.getElementById("tooltip");
   tooltip.innerText = "Copy to clipboard";
 }
@@ -137,6 +141,7 @@ function randomizeAll(arr) {
   return arr.sort(() => Math.random() - 0.5); 
 }
 
+// choosing of random index
 function randomFromZeroToMax(max) {
   return Math.round(Math.random() * max);
 }
